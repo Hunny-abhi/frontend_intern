@@ -1,0 +1,38 @@
+export const dummyBlogs = [
+  {
+    _id: "68a555c8c6f3cb8905160621",
+    title: "ewew",
+    content: "rt",
+    author: "eef",
+    tags: ["wef"],
+    createdAT: "2025-08-20T04:57:44.592Z",
+    __v: 0,
+  },
+  {
+    _id: "68a555dcc6f3cb8905160623",
+    title: "rg",
+    content: "rg",
+    author: "rg",
+    tags: ["erg"],
+    createdAT: "2025-08-20T04:58:04.315Z",
+    __v: 0,
+  },
+  {
+    _id: "68a559aac6f3cb890516062c",
+    title: "Postman Blog Title",
+    content: "Postman Blog content",
+    author: "Postman",
+    tags: ["tag1", "tag2", "tag3"],
+    createdAT: "2025-08-20T05:14:18.824Z",
+    __v: 0,
+  },
+  {
+    _id: "68a55ad5c6f3cb890516062e",
+    title: "Postman Blog Title",
+    content: "Postman Blog content",
+    author: "Postman",
+    tags: ["tag1", "tag2", "tag3"],
+    createdAT: "2025-08-20T05:19:17.585Z",
+    __v: 0,
+  },
+];
