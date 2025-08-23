@@ -6,7 +6,7 @@ import AllBlogs from "./pages/AllBlogs";
 import AddBlog from "./pages/AddBlog";
 import SingleBlog from "./pages/SingleBlog";
 
-import Navbar from "./components/navbar";
+import Navbar from "./components/Navbar";
 
 const App = () => {
   return (
