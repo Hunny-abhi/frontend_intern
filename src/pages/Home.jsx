@@ -5,6 +5,8 @@ import { Link } from "react-router";
 import axios from "axios";
 import { toast } from "react-toastify";
 
+const API_BASE = import.meta.env.VITE_API_BASE;
+
 const HomePage = function () {
   const [recentBlogs, setRecentBlogs] = useState([]);
   const [isLoading, setIsLoading] = useState([]);
@@ -12,7 +14,7 @@ const HomePage = function () {
   useEffect(function () {
     async function fetchRecentBlogs() {
       try {
-        const response = await axios.get("http://localhost:5000/api/v1/blogs");
+        const response = await axios.get(`${API_BASE}/api/v1/blogs`);
         setRecentBlogs(response.data.slice(0, 4));
       } catch (error) {
         console.log(error);

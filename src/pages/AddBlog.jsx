@@ -3,6 +3,8 @@ import { useNavigate } from "react-router";
 import axios from "axios";
 import { SquarePen } from "lucide-react";
 
+const API_BASE = import.meta.env.VITE_API_BASE;
+
 const AddBlog = function () {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
@@ -27,7 +29,7 @@ const AddBlog = function () {
     console.log(newBlog);
     try {
       setIsLoading(true);
-      await axios.post("http://localhost:5000/api/v1/blogs", newBlog);
+      await axios.post(`${API_BASE}/api/v1/blogs`, newBlog);
       console.log("axios is working..");
       navigate("/blogs");
     } catch (error) {

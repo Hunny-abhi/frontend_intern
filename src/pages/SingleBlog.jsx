@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { ArrowLeft } from "lucide-react";
 
+const API_BASE = import.meta.env.VITE_API_BASE;
+
 const SingleBlog = function () {
   const { id } = useParams();
 
@@ -12,15 +14,9 @@ const SingleBlog = function () {
 
   useEffect(
     function () {
-      console.log("Hii");
-
       async function fetchBlog() {
-        console.log("HELLLOOOO");
-
         try {
-          const response = await axios.get(
-            `http://localhost:5000/api/v1/blogs/${id}`
-          );
+          const response = await axios.get(`${API_BASE}/api/v1/blogs/${id}`);
           console.log(response.data);
           setBlog(response.data);
         } catch (error) {
@@ -36,7 +32,7 @@ const SingleBlog = function () {
 
   async function deleteBlog(id) {
     try {
-      await axios.delete(`http://localhost:5000/api/v1/blogs/${id}`);
+      await axios.delete(`${API_BASE}/api/v1/blogs/${id}`);
       navigate("/blogs");
     } catch (error) {
       console.error("Error deleting blog:", error);

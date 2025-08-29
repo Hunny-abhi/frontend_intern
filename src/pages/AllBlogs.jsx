@@ -4,6 +4,8 @@ import { toast } from "react-toastify";
 
 import BlogCard from "../components/BlogCard";
 
+const API_BASE = import.meta.env.VITE_API_BASE;
+
 const AllBlogs = function () {
   const [blogs, setBlogs] = useState([]);
   const [isLoading, setIsLoading] = useState([]);
@@ -11,7 +13,7 @@ const AllBlogs = function () {
   useEffect(function () {
     async function FetchBlogs() {
       try {
-        const response = await axios.get("http://localhost:5000/api/v1/blogs");
+        const response = await axios.get(`${API_BASE}/api/v1/blogs`);
         setBlogs(response.data);
       } catch (error) {
         toast.error("No blog something went wrong!!!!");
